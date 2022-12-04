@@ -1,1 +1,1 @@
-web: gunicorn proyectoAR.wsgi
+web: python manage.py migrate && gunicorn proyectoAR.wsgi
