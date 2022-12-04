@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import datetime
 import os
 from dotenv import load_dotenv
+import dj_database_url
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +27,9 @@ load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = os.getenv("SECRET_KEY")
-SECRET_KEY = 'django-insecure-br4-6pry%2h!_wq7w@x$xgm2z9lt-3#7d%c*!vik6!z6a4qsma'
+SECRET_KEY = os.getenv("SECRET_KEY")
+# SECRET_KEY = 'django-insecure-br4-6pry%2h!_wq7w@x$xgm2z9lt-3#7d%c*!vik6!z6a4qsma'
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -98,19 +102,21 @@ WSGI_APPLICATION = 'proyectoAR.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
 DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        'NAME': 'BDPaola',
-        'USER': 'postgres',
-        'PASSWORD': 'navau',
-        'HOST': 'localhost',
-        'PORT': 5432,
-    }
+    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+    # "default": {
+    #     "ENGINE": "django.db.backends.postgresql_psycopg2",
+    #     'NAME': 'BDPaola',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'navau',
+    #     'HOST': 'localhost',
+    #     'PORT': 5432,
+    # }
 }
 
 
