@@ -27,9 +27,10 @@ load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = os.getenv("SECRET_KEY")
-SECRET_KEY = os.getenv("SECRET_KEY")
-# SECRET_KEY = 'django-insecure-br4-6pry%2h!_wq7w@x$xgm2z9lt-3#7d%c*!vik6!z6a4qsma'
-DATABASE_URL = os.getenv("DATABASE_URL")
+# SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = 'django-insecure-br4-6pry%2h!_wq7w@x$xgm2z9lt-3#7d%c*!vik6!z6a4qsma'
+# DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = 'postgresql://postgres:SE74bEw@containers-51.railway.app:6919/railway'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -108,7 +109,7 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
-    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+    # "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
     # "default": {
     #     "ENGINE": "django.db.backends.postgresql_psycopg2",
     #     'NAME': 'BDPaola',
@@ -117,6 +118,14 @@ DATABASES = {
     #     'HOST': 'localhost',
     #     'PORT': 5432,
     # }
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'KKZp8n5WkTx5zBYHXsfF',
+        'HOST': 'containers-us-west-32.railway.app',
+        'PORT': 6556,
+    }
 }
 
 
