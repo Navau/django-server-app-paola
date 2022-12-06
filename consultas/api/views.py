@@ -7,7 +7,7 @@ from consultas.api.serializers import ConsultaSerializer
 
 
 class ConsultaApiViewSet(ModelViewSet):
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    # permission_classes = [IsAuthenticatedOrReadOnly]
     serializer_class = ConsultaSerializer
     queryset = Consulta.objects.all()
     filter_backends = [DjangoFilterBackend]

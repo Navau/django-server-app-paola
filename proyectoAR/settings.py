@@ -41,8 +41,8 @@ ALLOWED_HOSTS = [
     '0.0.0.0',
     '*',
     '192.168.1.200',
-    '127.0.0.1',  # CAMBIO
-    'localhost'  # CAMBIO
+    '127.0.0.1',
+    'localhost'
 ]
 
 
@@ -55,11 +55,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework_simplejwt',  # CAMBIO
-    'rest_framework',  # CAMBIO
-    'drf_yasg',  # CAMBIO
-    "corsheaders",  # CAMBIO
-    'django_filters',  # CAMBIO
+    'rest_framework_simplejwt',
+    'rest_framework',
+    'drf_yasg',
+    "corsheaders",
+    'django_filters',
     'personas',
     'usuarios',
     'pacientes',
@@ -75,8 +75,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "corsheaders.middleware.CorsMiddleware",  # CAMBIO
-    'whitenoise.middleware.WhiteNoiseMiddleware'  # CAMBIO
+    "corsheaders.middleware.CorsMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'proyectoAR.urls'
@@ -110,22 +110,22 @@ DATABASES = {
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
     # "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
-    # "default": {
-    #     "ENGINE": "django.db.backends.postgresql_psycopg2",
-    #     'NAME': 'BDPaola',
-    #     'USER': 'postgres',
-    #     'PASSWORD': 'navau',
-    #     'HOST': 'localhost',
-    #     'PORT': 5432,
-    # }
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        'NAME': 'railway',
+        'NAME': 'BDPaola',
         'USER': 'postgres',
-        'PASSWORD': 'emNKlxha6C54eC0o3i6c',
-        'HOST': 'containers-us-west-146.railway.app',
-        'PORT': 7651,
+        'PASSWORD': 'navau',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
+    # "default": {
+    #     "ENGINE": "django.db.backends.postgresql_psycopg2",
+    #     'NAME': 'railway',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'emNKlxha6C54eC0o3i6c',
+    #     'HOST': 'containers-us-west-146.railway.app',
+    #     'PORT': 7651,
+    # }
 }
 
 
@@ -147,7 +147,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# CAMBIO TOKEN
+# TOKEN
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -171,7 +171,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
-# CAMBIO SUBIDAS DE ARCHIVOS
+# SUBIDAS DE ARCHIVOS
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
@@ -188,6 +188,33 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
+    'http://192.168.1.204',
+    'http://0.0.0.0:80',
+    'http://0.0.0.0',
+    'http://0.0.0.0',
+    'http://192.168.1.200',
+    'http://127.0.0.1',
+    'http://localhost',
+    "http://192.168.1.200:8000",
+]
+CORS_ORIGIN_WHITELIST = [
+    'http://192.168.1.204',
+    'http://0.0.0.0:80',
+    'http://0.0.0.0',
+    'http://0.0.0.0',
+    'http://192.168.1.200',
+    'http://127.0.0.1',
+    'http://localhost',
+    "http://192.168.1.200:8000",
+]
+CORS_ORIGIN_REGEX_WHITELIST = [
+    'http://192.168.1.204',
+    'http://0.0.0.0:80',
+    'http://0.0.0.0',
+    'http://0.0.0.0',
+    'http://192.168.1.200',
+    'http://127.0.0.1',
+    'http://localhost',
     "http://192.168.1.200:8000",
 ]
 
@@ -204,7 +231,7 @@ CORS_ALLOWED_ORIGINS = [
 #     'x-requested-with'
 # ]
 
-# CAMBIO
+
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=360),
 }

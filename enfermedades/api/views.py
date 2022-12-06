@@ -6,6 +6,6 @@ from enfermedades.api.serializers import EnfermedadSerializer
 
 
 class EnfermedadApiViewSet(ModelViewSet):
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    # permission_classes = [IsAuthenticatedOrReadOnly]
     serializer_class = EnfermedadSerializer
     queryset = Enfermedad.objects.all()
