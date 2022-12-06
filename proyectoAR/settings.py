@@ -110,22 +110,22 @@ DATABASES = {
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
     # "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        'NAME': 'BDPaola',
-        'USER': 'postgres',
-        'PASSWORD': 'navau',
-        'HOST': 'localhost',
-        'PORT': 5432,
-    }
     # "default": {
     #     "ENGINE": "django.db.backends.postgresql_psycopg2",
-    #     'NAME': 'railway',
+    #     'NAME': 'BDPaola',
     #     'USER': 'postgres',
-    #     'PASSWORD': 'emNKlxha6C54eC0o3i6c',
-    #     'HOST': 'containers-us-west-146.railway.app',
-    #     'PORT': 7651,
+    #     'PASSWORD': 'navau',
+    #     'HOST': 'localhost',
+    #     'PORT': 5432,
     # }
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'emNKlxha6C54eC0o3i6c',
+        'HOST': 'containers-us-west-146.railway.app',
+        'PORT': 7651,
+    }
 }
 
 
